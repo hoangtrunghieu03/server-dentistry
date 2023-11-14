@@ -4,8 +4,7 @@ const bcrypt = require('bcrypt');
 class PassportController {
     
     login(req, res, next) {
-        const email = req.body.email;
-        const password = req.body.password;
+        const { email, password} = req.body;
       
         Users.findOne({ email: email })
         .then(user => {
